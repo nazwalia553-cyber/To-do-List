@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplikasi pengelola tugas harian sederhana">
+    <title>My To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <header class="header">
+            <div class="header-icon">✓</div>
+            <h1>My To-Do List</h1>
+            <p>Atur kegiatanmu dan selesaikan satu per satu.</p>
+        </header>
+
+        <section class="summary">
+            <div class="summary-card">
+                <span id="totalTasks">0</span>
+                <p>Total Tugas</p>
+            </div>
+
+            <div class="summary-card">
+                <span id="activeTasks">0</span>
+                <p>Belum Selesai</p>
+            </div>
+
+            <div class="summary-card">
+                <span id="completedTasks">0</span>
+                <p>Selesai</p>
+            </div>
+        </section>
+
+        <section class="task-section">
+
+            <h2>Daftar Tugas</h2>
+
+            <form id="taskForm" class="input-area">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Masukkan tugas baru..."
+                    maxlength="100"
+                    autocomplete="off"
+                    aria-label="Nama tugas"
+                >
+
+                <button type="submit" id="addButton">
+                    + Tambah
+                </button>
+            </form>
+
+            <p id="message" class="message" role="status" aria-live="polite"></p>
+
+            <div class="filter-area">
+                <button class="filter-btn active" data-filter="all">
+                    Semua
+                </button>
+
+                <button class="filter-btn" data-filter="active">
+                    Belum Selesai
+                </button>
+
+                <button class="filter-btn" data-filter="completed">
+                    Selesai
+                </button>
+            </div>
+
+            <ul id="taskList" class="task-list"></ul>
+
+            <div id="emptyMessage" class="empty-message">
+                <span>📝</span>
+                <p>Belum ada tugas. Yuk, tambahkan tugas pertamamu!</p>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>My To-Do List | Aplikasi Manajemen Tugas</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
